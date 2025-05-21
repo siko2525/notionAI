@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   const setSession = async () => {
-    const currentUser = await authRepository.getCurentUser();
+    const currentUser = await authRepository.getCurrentUser();
     currentUserStore.set(currentUser);
     setIsLoading(false);
   };

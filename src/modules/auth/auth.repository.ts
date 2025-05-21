@@ -25,7 +25,7 @@ export const authRepository = {
     };
   },
 
-  async getCurentUser() {
+  async getCurrentUser() {
     const { data, error } = await supabase.auth.getSession();
     if (error != null) throw new Error(error.message);
     if (data.session == null) return;
