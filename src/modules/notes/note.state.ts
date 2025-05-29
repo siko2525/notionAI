@@ -19,11 +19,29 @@ export const useNoteStore = () => {
       return Object.values(uniqueNotes);
     });
   };
+
+  const deleteNote = (id: number) => {
+    const findChildren = (parentId: number): number[] => {
+      const childrenIds = notes
+        .filter((note) => note.parent_document === parentId)
+        .map((child) => child.id);
+      return childrenIds.concat(
+        ...childrenIds.map((childId) => findChildren(childId))
+      );
+    };
+    const childrenIds = findChildren(id);
+    // [...childrenIds, id]
+    setNotes((oldNotes) =>
+      oldNotes.filter((note) => ![...childrenIds, id].includes(note.id))
+    );
+  };
+
   const getOne = (id: number) => notes.find((note) => note.id == id);
 
   return {
     getAll: () => notes,
     getOne,
     set,
+    delete: deleteNote,
   };
 };
