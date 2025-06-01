@@ -1,6 +1,6 @@
 import TextAreaAutoSize from "react-textarea-autosize";
 import { useState } from "react";
-import { Note } from "@/modules/notes/note.model";
+import { Note } from "@/modules/notes/note.entity";
 
 interface TitleInputProps {
   initialData: Note;
