@@ -18,9 +18,4 @@ export default defineConfig({
   optimizeDeps: {
     include: ["react", "react-dom"],
   },
-  build: {
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
-  },
 });
