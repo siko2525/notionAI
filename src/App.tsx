@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Layout from "./Layout";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import "./App.css";
 import { useEffect, useState } from "react";
 import { authRepository } from "./modules/auth/auth.repository";
 import { useCurrentUserStore } from "./modules/auth/current-user.state";
