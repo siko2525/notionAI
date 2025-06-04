@@ -16,14 +16,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: [
-      "react/jsx-runtime",
-      "react-dom",
-      "react-router-dom",
-      "react-router",
-      "react-redux",
-      "redux",
-      "redux-thunk",
-    ],
+    include: ["react", "react-dom"],
   },
 });
